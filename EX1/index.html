@@ -8,7 +8,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -16,36 +17,153 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <div class="array1">
-      <div class="container row p-3 d-flex justify-content-center">
-        <div class="form-group col-6">
-          <input
-            type="number"
-            class="form-control"
-            name=""
-            id="inputArray"
-            placeholder="Enter n"
-          />
+    <div class="sheet container">
+      <!-- Nhập Arr============================================================================================ -->
+      <section class="array1">
+        <div class="container row p-3 d-flex">
+          <div class="form-group col-6">
+            <input
+              type="number"
+              class="form-control"
+              name=""
+              id="inputArray"
+              placeholder="Enter n"
+            />
+          </div>
+          <button class="btn btn-primary rounded-pill col-3" onclick="addArray()">
+            Add
+          </button>
         </div>
-        <button class="btn btn-primary rounded-pill col-3" onclick="addArray()">
-          Add
-        </button>
-      </div>
-      <div class="container row d-flex justify-content-center ml-0">
-        <div class="bg-success col-9" id="result"></div>
-      </div>
-    </div>
-    <div class="SumOfPositive">
-      <button class="btn btn-primary rounded-pill col-3" onclick="Sum()">
-        Sum
-      </button>
-      <div class="container row d-flex justify-content-center ml-0">
-        <div class="bg-success col-9" id="result1"></div>
-      </div>
-    </div>
-    <!-- Optional JavaScript -->
+        <div class="container">
+          <div class="bg-success p-3" id="result"><i class="fa fa-hand-point-right pl-1 pr-1"></i></div>
+        </div>
+      </section>
+      <!--1. Tổng + =========================================================================================== -->
+      <section class="SumOfPositive mt-lg-5">
+        <a class="btn btn-primary d-flex justify-content-between align-items-center" data-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><div>Tìm số dương nhỏ nhất</div><i class="fa fa-chevron-down"></i></a>
+        <div class="collapse multi-collapse" id="multiCollapseExample4">
+          <div class="card card-body">
+            <div class="container m-2">
+              <button class="btn btn-primary rounded-pill col-3" onclick="sumOfArray()">
+                Sum
+              </button>
+            </div>
+            <div class="container">
+              <div class="bg-success p-3" id="result1"><i class="fa fa-hand-point-right pl-1 pr-1"></i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--2. Đếm số dương ===================================================================================== -->
+      <section class="CountOfPositive mt-lg-5">
+        <a class="btn btn-primary d-flex justify-content-between align-items-center" data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><div>Tìm số dương nhỏ nhất</div><i class="fa fa-chevron-down"></i></a>
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+          <div class="card card-body">
+            <div class="container m-2">
+              <button class="btn btn-primary rounded-pill col-3" onclick="count()">
+                Đếm số
+              </button>
+            </div>
+            <div class="container">
+              <div class="bg-success p-3" id="result2"><i class="fa fa-hand-point-right pl-1 pr-1"></i></div>
+            </div>
+          </div>
+        </div>     
+      </section>
+      <!--3. Min=============================================================================================== -->
+      <section class="min mt-lg-5">
+        <a class="btn btn-primary d-flex justify-content-between align-items-center" data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><div>Tìm số nhỏ nhất</div><i class="fa fa-chevron-down"></i></a>
+        <div class="collapse multi-collapse" id="multiCollapseExample3">
+          <div class="card card-body">
+            <div class="container m-2">
+              <button class="btn btn-primary rounded-pill col-3" onclick="findMin()">
+                Tìm số nhỏ nhất
+              </button>
+            </div>
+            <div class="container">
+              <div class="bg-success p-3" id="result3"><i class="fa fa-hand-point-right pl-1 pr-1"></i></div>
+            </div>
+          </div>
+        </div>   
+      </section>
+      <!--4. Min Positive====================================================================================== -->
+      <section class="minPositive mt-lg-5">
+        <a class="btn btn-primary d-flex justify-content-between align-items-center" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><div>Tìm số dương nhỏ nhất</div><i class="fa fa-chevron-down"></i></a>
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+          <div class="card card-body">
+            <div class="container m-2">
+              <button class="btn btn-primary rounded-pill col-3" onclick="findMinPositive()">
+                Tìm số dương nhỏ nhất
+              </button>
+            </div>
+            <div class="container">
+              <div class="bg-success p-3" id="result4"><i class="fa fa-hand-point-right pl-1 pr-1"></i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5.Số chẵn cuối ===================================================================================== -->
+      <section class="finalEven mt-lg-5">
+        <a class="btn btn-primary d-flex justify-content-between align-items-center" data-toggle="collapse" href="#multiCollapseExample5" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><div>Tìm số chẵn cuối cùng</div><i class="fa fa-chevron-down"></i></a>
+        <div class="collapse multi-collapse" id="multiCollapseExample5">
+          <div class="card card-body">
+            <div class="container m-2">
+              <button class="btn btn-primary rounded-pill col-3" onclick="findOdd()">
+                Tìm số dương chẵn
+              </button>
+            </div>
+            <div class="container">
+              <div class="bg-success p-3" id="result5"><i class="fa fa-hand-point-right pl-1 pr-1"></i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 6.Đổi chỗ ========================================================================================== -->
+      <section class="changePosition mt-lg-5">
+        <a class="btn btn-primary d-flex justify-content-between align-items-center" data-toggle="collapse" href="#multiCollapseExample6" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><div>Đổi chỗ</div><i class="fa fa-chevron-down"></i></a>
+        <div class="collapse multi-collapse" id="multiCollapseExample6">
+          <div class="card card-body">
+          </div>
+        </div>
+      </section>
+      <!-- 7.Sắp xếp tăng dần ================================================================================= -->
+      <section class="Arrange mt-lg-5">
+        <a class="btn btn-primary d-flex justify-content-between align-items-center" data-toggle="collapse" href="#multiCollapseExample7" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><div>Sắp xếp tăng dần</div><i class="fa fa-chevron-down"></i></a>
+        <div class="collapse multi-collapse" id="multiCollapseExample7">
+          <div class="card card-body">
+          </div>
+        </div>
+      </section>
+      <!-- 8.First Prime Number================================================================================ -->
+      <section class="firstPrime mt-lg-5">
+        <a class="btn btn-primary d-flex justify-content-between align-items-center" data-toggle="collapse" href="#multiCollapseExample8" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><div>Tìm số nguyên tố đầu tiên</div><i class="fa fa-chevron-down"></i></a>
+        <div class="collapse multi-collapse" id="multiCollapseExample8">
+          <div class="card card-body">
+          </div>
+        </div>
+      </section>
+      <!-- 9.Đếm integer ====================================================================================== -->
+      <section class="countInteger mt-lg-5">
+        <a class="btn btn-primary d-flex justify-content-between align-items-center" data-toggle="collapse" href="#multiCollapseExample9" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><div>Đếm số nguyên</div><i class="fa fa-chevron-down"></i></a>
+        <div class="collapse multi-collapse" id="multiCollapseExample9">
+          <div class="card card-body">
+          </div>
+        </div>
+      </section>
+      <!-- 10.ss âm dương ===================================================================================== -->
+      <section class="comparingPoNe mt-lg-5">
+        <a class="btn btn-primary d-flex justify-content-between align-items-center" data-toggle="collapse" href="#multiCollapseExample10" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><div>So sánh số lượng số âm và dương</div><i class="fa fa-chevron-down"></i></a>
+        <div class="collapse multi-collapse" id="multiCollapseExample10">
+          <div class="card card-body">
+          </div>
+        </div>  
+      </se  ction>
+    </div>  
+    <!-- Opt  ional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
